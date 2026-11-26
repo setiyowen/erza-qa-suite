@@ -1,0 +1,19 @@
+{
+  "name": "erza-qa-suite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "E2E (Playwright) + Load test (k6) suite for dev.erza.ai",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:report": "playwright show-report",
+    "k6:smoke": "k6 run ./k6/smoke.js",
+    "k6:load": "k6 run ./k6/load.js",
+    "k6:bulk": "k6 run ./k6/auto-bulk.js",
+    "lint": "playwright test --list && node -e \"console.log('k6 files:', require('fs').readdirSync('k6'))\""
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "typescript": "^5.4.0"
+  }
+}
