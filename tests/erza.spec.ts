@@ -2,9 +2,6 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Erza AI - Quick Create & Auto Generate', () => {
   const BASE = 'https://dev.erza.ai';
-  const STORAGE_STATE = 'playwright/.auth/storageState.json';
-
-  test.use({ storageState: STORAGE_STATE });
 
   test.beforeEach(async ({ page }) => {
     await page.goto(BASE + '/en/article/quick-create');
@@ -92,8 +89,6 @@ test.describe('Erza AI - Quick Create & Auto Generate', () => {
 
 test.describe('Erza AI - AI Tools (English)', () => {
   const BASE = 'https://dev.erza.ai';
-  const STORAGE_STATE = 'playwright/.auth/storageState.json';
-  test.use({ storageState: STORAGE_STATE });
 
   test('Writing Assistant - Import, Save, Export, Add to Collection work', async ({ page }) => {
     await page.goto(BASE + '/en/ai-tools/writing-assistant');
@@ -170,8 +165,6 @@ test.describe('Erza AI - AI Tools (English)', () => {
 
 test.describe('Erza AI - Indonesian Locale (i18n)', () => {
   const BASE = 'https://dev.erza.ai';
-  const STORAGE_STATE = 'playwright/.auth/storageState.json';
-  test.use({ storageState: STORAGE_STATE });
 
   test('AI Chat identity leak - answers "dilatih oleh Google" instead of Erza AI', async ({ page }) => {
     await page.goto(BASE + '/id/ai-chat');
